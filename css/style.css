@@ -417,14 +417,14 @@ body {
 
   /* HERO (mobile version) */
   .hero {
-    background-image: url("../images/bg-mob.png");  /* nuova immagine mobile */
-    background-size: cover;                         /* riempie lo schermo */
-    background-position: center top;                /* mostra bene la parte superiore */
+    background-image: url("../images/bg-mob.png");
+    background-size: auto 120%;   /* 👈 era 100%, puoi provare 110 / 115 / 120 */
+    background-position: center top;
     background-attachment: scroll;
-    min-height: 100vh;                              /* full screen */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-  }
+}
 
   /* NAV MOBILE */
   .nav-bar {
