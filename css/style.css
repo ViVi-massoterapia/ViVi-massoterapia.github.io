@@ -412,7 +412,7 @@ body {
 @media (max-width: 768px) {
   .hero {
     background-attachment: scroll;
-    background-position: center top;
+    background-position: 50% 20%;
   }
 
   .nav-bar {
