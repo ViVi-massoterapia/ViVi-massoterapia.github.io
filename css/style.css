@@ -553,3 +553,34 @@ body {
     height: 64px;
   }
 }
+
+/* iPad / tablet in verticale */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+  /* usa lo sfondo mobile anche su iPad verticale */
+  .hero {
+    background-image: url("../images/bg-mob.png");
+    background-size: cover;
+    background-position: center top;
+    background-attachment: scroll;   /* niente effetto fixed su iPad */
+  }
+
+  /* testo centrato */
+  .hero-content {
+    justify-content: center;
+    padding: 60px 24px 80px;
+  }
+
+  .hero-title {
+    margin-left: 40px;
+  }
+
+  .hero-line {
+    font-size: 4.2rem;
+  }
+
+  .hero-line2 {
+    margin-left: 60px;
+  }
+}
+
