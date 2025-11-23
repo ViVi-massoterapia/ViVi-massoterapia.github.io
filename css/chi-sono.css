@@ -225,39 +225,88 @@
    RESPONSIVE CHI-SONO
    ========================================================= */
 
+/* ============================
+   MOBILE – PAGINA "CHI SONO"
+   ============================ */
 @media (max-width: 768px) {
+
+  /* Spazi tra le sezioni */
   .about-section {
-    padding: 40px 0;
+    padding: 32px 0 40px;
   }
 
+  /* Layout base: colonna, elementi centrati */
   .about-row,
   .about-row--reverse {
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 24px;
   }
 
+  /* Sezione 3 (Obbiettivo):
+     testo sopra, foto sotto */
+  .about-section:nth-of-type(3) .about-row {
+    flex-direction: column-reverse;
+  }
+
+  /* FOTO PIÙ PICCOLE */
   .about-image-wrapper {
     flex: 0 0 auto;
-    margin-top: 0;
+    max-width: 260px;        /* larghezza massima foto */
+    margin: 0 auto 16px;     /* spazio sotto la foto */
   }
 
+  .about-image {
+    max-width: 260px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  }
+
+  /* niente offset verticale extra */
+  .about-section .about-image-wrapper {
+    margin-top: 0 !important;
+  }
+
+  /* TESTO CENTRATO E PIÙ LEGGIBILE */
   .about-text {
-    max-width: 100%;
+    max-width: 90%;
     text-align: center;
+    margin: 0 auto;
   }
 
-  /* su mobile le bande tornano un po' più corte */
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* TITOLI CENTRATI, NIENTE SCORRIMENTO LATERALE */
+  .about-title {
+    font-size: 2.6rem;
+    margin-left: 0 !important;   /* annulla i margini desktop */
+  }
+
+  /* bande colorate più corte e centrate */
+  .about-title-row {
+    margin-bottom: 24px;
+    padding-top: 10px;
+  }
+
   .about-title-row::after {
-    left: 12%;
-    right: 12%;
+    left: 10%;
+    right: 10%;
   }
 
+  /* assicura che Esperienze non sia spostato a destra */
+  .about-section:nth-of-type(2) .about-title-row .about-title {
+    margin-left: 0 !important;
+  }
+
+  /* hero piccolo invariato */
   .hero.hero--small {
     min-height: 140px;
   }
 }
-
 /* iPad / tablet in verticale – versione chi-sono */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .hero.hero--small {
