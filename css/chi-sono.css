@@ -150,7 +150,7 @@
 }
 
 /* ---------------------------------------------------------
-   BANDE FULL-WIDTH per le 3 sezioni (solo desktop / tablet)
+   BANDE FULL-WIDTH per le 3 sezioni (desktop / tablet)
    --------------------------------------------------------- */
 
 /* 1) CHI SONO → banda azzurra verso destra */
@@ -160,8 +160,8 @@
 .about-section:nth-of-type(1) .about-title-row::after {
   left: 0;
   right: auto;
-  width: 100vw;                                   /* larghezza = viewport */
-  transform: translateX(calc(50% - 50vw));        /* centra rispetto al viewport */
+  width: 100vw;                                   /* larghezza viewport */
+  transform: translateX(calc(50% - 50vw));        /* centrata rispetto al viewport */
 }
 
 /* 2) ESPERIENZE → banda gialla da sinistra */
@@ -234,7 +234,7 @@
     padding: 32px 0 40px;
   }
 
-  /* Layout base: colonna, TESTO SOPRA, FOTO SOTTO */
+  /* Layout base: colonna, TESTO SOPRA, FOTO SOTTO per tutte le sezioni */
   .about-row,
   .about-row--reverse {
     flex-direction: column;
@@ -243,11 +243,11 @@
   }
 
   .about-text {
-    order: 1;
+    order: 1 !important;              /* forza il testo sopra */
   }
 
   .about-image-wrapper {
-    order: 2;
+    order: 2 !important;              /* foto sotto */
   }
 
   /* FOTO PIÙ PICCOLE */
@@ -299,11 +299,6 @@
     right: 10%;
     width: auto;
     transform: none;           /* annulla i translateX delle bande full-width */
-  }
-
-  /* assicurati che "Esperienze" non sia spostato a destra */
-  .about-section:nth-of-type(2) .about-title-row .about-title {
-    margin-left: 0 !important;
   }
 
   /* hero piccolo invariato */
