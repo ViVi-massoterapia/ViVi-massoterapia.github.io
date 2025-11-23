@@ -188,7 +188,7 @@
 }
 
 /* ---------------------------------------------------------
-   CALIBRAZIONE ALLINEAMENTO FOTO ↔ TITOLI
+   CALIBRAZIONE ALLINEAMENTO FOTO ↔ TITOLI (DESKTOP)
    --------------------------------------------------------- */
 
 /* Sezione 1 — CHI SONO */
@@ -211,7 +211,7 @@
   margin-left: 15px;
 }
 
-/* Sposta solo il testo "Esperienze" più a destra */
+/* Sposta solo il testo "Esperienze" più a destra (desktop) */
 .about-section:nth-of-type(2) .about-title-row .about-title {
   margin-left: 350px;
 }
@@ -243,10 +243,29 @@
     gap: 24px;
   }
 
-  /* Sezione 3 (Obbiettivo):
-     testo sopra, foto sotto */
-  .about-section:nth-of-type(3) .about-row {
-    flex-direction: column-reverse;
+  /* ORDINE MOBILE
+     Sezione 1 – CHI SONO: testo sopra, foto sotto */
+  .about-section:nth-of-type(1) .about-text {
+    order: 1;
+  }
+  .about-section:nth-of-type(1) .about-image-wrapper {
+    order: 2;
+  }
+
+  /* Sezione 2 – ESPERIENZE: foto sopra, testo sotto */
+  .about-section:nth-of-type(2) .about-image-wrapper {
+    order: 1;
+  }
+  .about-section:nth-of-type(2) .about-text {
+    order: 2;
+  }
+
+  /* Sezione 3 – OBBIETTIVO: testo sopra, foto sotto */
+  .about-section:nth-of-type(3) .about-text {
+    order: 1;
+  }
+  .about-section:nth-of-type(3) .about-image-wrapper {
+    order: 2;
   }
 
   /* FOTO PIÙ PICCOLE */
@@ -284,6 +303,7 @@
   .about-title {
     font-size: 2.6rem;
     margin-left: 0 !important;   /* annulla i margini desktop */
+    text-align: center;
   }
 
   /* bande colorate più corte e centrate */
@@ -307,8 +327,12 @@
     min-height: 140px;
   }
 }
-/* iPad / tablet in verticale – versione chi-sono */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+/* =========================================================
+   TABLET – iPad in verticale (chi-sono)
+   ========================================================= */
+@media (min-width: 768px) && (max-width: 1024px) and (orientation: portrait) {
+
   .hero.hero--small {
     background-image: none;
     background: linear-gradient(
@@ -318,5 +342,44 @@
       #ede9e4 100%
     );
     display: block;
+  }
+
+  .about-section {
+    padding: 48px 0;
+  }
+
+  .about-row,
+  .about-row--reverse {
+    gap: 48px;
+    align-items: center;
+  }
+
+  /* FOTO leggermente più piccole rispetto al desktop pieno */
+  .about-image-wrapper {
+    flex: 0 0 320px;
+    max-width: 320px;
+    margin-top: 10px;
+  }
+
+  .about-image {
+    max-width: 320px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.17);
+  }
+
+  /* TESTO più raccolto */
+  .about-text {
+    max-width: 560px;
+  }
+
+  /* Titoli centrati su tablet */
+  .about-title {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+
+  /* Bande un po' più corte */
+  .about-title-row::after {
+    left: 6%;
+    right: 6%;
   }
 }
