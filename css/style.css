@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -564,4 +568,5 @@ body {
   .hero-line2 {
     margin-left: 60px;
   }
+
 }
