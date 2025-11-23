@@ -62,7 +62,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;                 /* offset uguale per tutte le sezioni */
+  margin-top: 20px;                 /* offset base per tutte le sezioni */
 }
 
 .about-image {
@@ -118,20 +118,19 @@
 .about-title-row {
   position: relative;
   margin-bottom: 32px;
-  padding-top: 20px;                /* stessa altezza di partenza rispetto alla foto */
+  padding-top: 20px;                /* allineamento con la foto */
 }
 
 .about-title-row::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
   bottom: 8px;
   height: 12px;
   background-color: var(--bg-aqua);
   z-index: -1;
 }
 
+/* variazione colore giallo */
 .about-title-row--yellow::after {
   background-color: var(--accent-yellow);
 }
@@ -151,40 +150,40 @@
 }
 
 /* ---------------------------------------------------------
-   BANDE FULL-WIDTH per le 3 sezioni
+   BANDE FULL-WIDTH per le 3 sezioni (solo desktop / tablet)
    --------------------------------------------------------- */
 
-/* 1) CHI SONO → banda azzurra che va verso destra */
+/* 1) CHI SONO → banda azzurra verso destra */
 .about-section:nth-of-type(1) .about-title-row {
   overflow: visible;
 }
-
 .about-section:nth-of-type(1) .about-title-row::after {
   left: 0;
-  right: -2000px; /* si estende a destra oltre il container */
-  background-color: var(--bg-aqua);
+  right: auto;
+  width: 100vw;                                   /* larghezza = viewport */
+  transform: translateX(calc(50% - 50vw));        /* centra rispetto al viewport */
 }
 
-/* 2) ESPERIENZE → banda gialla che viene da sinistra */
+/* 2) ESPERIENZE → banda gialla da sinistra */
 .about-section:nth-of-type(2) .about-title-row {
   overflow: visible;
 }
-
 .about-section:nth-of-type(2) .about-title-row::after {
-  left: -2000px; /* parte da fuori a sinistra */
   right: 0;
-  background-color: var(--accent-yellow);
+  left: auto;
+  width: 100vw;
+  transform: translateX(calc(-50% + 50vw));
 }
 
 /* 3) OBBIETTIVO → banda azzurra verso destra */
 .about-section:nth-of-type(3) .about-title-row {
   overflow: visible;
 }
-
 .about-section:nth-of-type(3) .about-title-row::after {
   left: 0;
-  right: -2000px;
-  background-color: var(--bg-aqua);
+  right: auto;
+  width: 100vw;
+  transform: translateX(calc(50% - 50vw));
 }
 
 /* ---------------------------------------------------------
@@ -206,17 +205,17 @@
   margin-top: 40px;
 }
 
-/* Sposta solo il testo "Chi sono" più a destra */
+/* Sposta solo il testo "Chi sono" un po' a destra */
 .about-section:nth-of-type(1) .about-title-row .about-title {
   margin-left: 15px;
 }
 
-/* Sposta solo il testo "Esperienze" più a destra (desktop) */
+/* Sposta solo il testo "Esperienze" verso il centro-destra */
 .about-section:nth-of-type(2) .about-title-row .about-title {
   margin-left: 350px;
 }
 
-/* Sposta solo il testo "Obbiettivo" più a destra */
+/* Sposta solo il testo "Obbiettivo" un po' a destra */
 .about-section:nth-of-type(3) .about-title-row .about-title {
   margin-left: 15px;
 }
@@ -235,7 +234,7 @@
     padding: 32px 0 40px;
   }
 
-  /* Layout base: colonna, elementi centrati */
+  /* Layout base: colonna, TESTO SOPRA, FOTO SOTTO */
   .about-row,
   .about-row--reverse {
     flex-direction: column;
@@ -243,28 +242,11 @@
     gap: 24px;
   }
 
-  /* ORDINE MOBILE
-     Sezione 1 – CHI SONO: testo sopra, foto sotto */
-  .about-section:nth-of-type(1) .about-text {
+  .about-text {
     order: 1;
-  }
-  .about-section:nth-of-type(1) .about-image-wrapper {
-    order: 2;
   }
 
-  /* Sezione 2 – ESPERIENZE: foto sopra, testo sotto */
-  .about-section:nth-of-type(2) .about-image-wrapper {
-    order: 1;
-  }
-  .about-section:nth-of-type(2) .about-text {
-    order: 2;
-  }
-
-  /* Sezione 3 – OBBIETTIVO: testo sopra, foto sotto */
-  .about-section:nth-of-type(3) .about-text {
-    order: 1;
-  }
-  .about-section:nth-of-type(3) .about-image-wrapper {
+  .about-image-wrapper {
     order: 2;
   }
 
@@ -282,7 +264,7 @@
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
   }
 
-  /* niente offset verticale extra */
+  /* nessun offset verticale extra */
   .about-section .about-image-wrapper {
     margin-top: 0 !important;
   }
@@ -303,21 +285,23 @@
   .about-title {
     font-size: 2.6rem;
     margin-left: 0 !important;   /* annulla i margini desktop */
-    text-align: center;
   }
 
-  /* bande colorate più corte e centrate */
+  /* bande colorate corte e centrate, senza overflow */
   .about-title-row {
     margin-bottom: 24px;
     padding-top: 10px;
+    overflow: visible;
   }
 
   .about-title-row::after {
     left: 10%;
     right: 10%;
+    width: auto;
+    transform: none;           /* annulla i translateX delle bande full-width */
   }
 
-  /* assicura che Esperienze non sia spostato a destra */
+  /* assicurati che "Esperienze" non sia spostato a destra */
   .about-section:nth-of-type(2) .about-title-row .about-title {
     margin-left: 0 !important;
   }
@@ -328,11 +312,12 @@
   }
 }
 
-/* =========================================================
-   TABLET – iPad in verticale (chi-sono)
-   ========================================================= */
-@media (min-width: 768px) && (max-width: 1024px) and (orientation: portrait) {
+/* ===========================================
+   iPad / tablet in verticale – pagina chi-sono
+   =========================================== */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
 
+  /* hero piccolo: stessa sfumatura */
   .hero.hero--small {
     background-image: none;
     background: linear-gradient(
@@ -344,42 +329,26 @@
     display: block;
   }
 
-  .about-section {
-    padding: 48px 0;
-  }
-
+  /* layout ancora a due colonne ma più compatto */
   .about-row,
   .about-row--reverse {
-    gap: 48px;
-    align-items: center;
+    gap: 40px;
   }
 
-  /* FOTO leggermente più piccole rispetto al desktop pieno */
   .about-image-wrapper {
     flex: 0 0 320px;
-    max-width: 320px;
-    margin-top: 10px;
+    margin-top: 24px;
   }
 
   .about-image {
     max-width: 320px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.17);
   }
 
-  /* TESTO più raccolto */
   .about-text {
-    max-width: 560px;
+    max-width: 600px;
   }
 
-  /* Titoli centrati su tablet */
   .about-title {
-    margin-left: 0 !important;
-    text-align: center;
-  }
-
-  /* Bande un po' più corte */
-  .about-title-row::after {
-    left: 6%;
-    right: 6%;
+    font-size: 3.2rem;
   }
 }
