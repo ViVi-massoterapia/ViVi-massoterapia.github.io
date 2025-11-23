@@ -347,3 +347,29 @@
     font-size: 3.2rem;
   }
 }
+
+/* =========================================================
+   MOBILE + TABLET VERTICALE (bande full-width + titoli centrati)
+   ========================================================= */
+@media (max-width: 1024px) {
+
+  /* Centra tutti i titoli */
+  .about-title {
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Banda FULL WIDTH per tutte le sezioni */
+  .about-title-row::after {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important; /* trucco per allineare al viewport */
+  }
+
+  /* Rimuove overflow nascosti dal container */
+  .about-title-row {
+    overflow: visible !important;
+  }
+}
