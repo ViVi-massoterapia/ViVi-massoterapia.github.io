@@ -33,7 +33,9 @@ body {
   padding: 0 24px;
 }
 
-/* HERO */
+/* =========================================================
+   HERO (INDEX)
+   ========================================================= */
 
 .hero {
   position: relative;
@@ -49,20 +51,16 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-
   background: linear-gradient(
       to bottom,
-      rgba(135, 207, 224, 0.95) 0%,     /* AZZURRO MOLTO FORTE */
-      rgba(135, 207, 224, 0.70) 22%,   /* ancora ben visibile */
-      rgba(135, 207, 224, 0.35) 45%,   /* ammorbidisce */
-      rgba(255, 255, 255, 0) 70%,      /* diventa trasparente */
-      rgba(0, 0, 0, 0.10) 100%         /* leggerissimo scuro finale */
+      rgba(135, 207, 224, 0.95) 0%,
+      rgba(135, 207, 224, 0.70) 22%,
+      rgba(135, 207, 224, 0.35) 45%,
+      rgba(255, 255, 255, 0) 70%,
+      rgba(0, 0, 0, 0.10) 100%
   );
-
   pointer-events: none;
 }
-
-
 
 /* NAV BAR */
 
@@ -84,7 +82,7 @@ body {
 }
 
 .logo {
-  height: 110px; /* logo grande */
+  height: 110px;
   width: auto;
 }
 
@@ -105,7 +103,7 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  font-size: 1.15rem;          /* voci menu più grandi */
+  font-size: 1.15rem;
   letter-spacing: 0.12em;
   color: var(--nav-link);
   text-transform: uppercase;
@@ -147,7 +145,7 @@ body {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* HERO CONTENT */
+/* HERO CONTENT (solo index) */
 
 .hero-content {
   position: relative;
@@ -171,34 +169,28 @@ body {
 
 .hero-line {
   font-family: "Splash", cursive;
-  font-size: clamp(4rem, 8vw, 6rem); /* MOLTO grande */
+  font-size: clamp(4rem, 8vw, 6rem);
   font-weight: 500;
   letter-spacing: 0.03em;
   color: #000000;
   white-space: nowrap;
-
-  /* stato iniziale "nascosto" */
   opacity: 0;
   filter: blur(8px);
   transform: translateY(24px);
 }
 
-/* seconda riga spostata a destra */
 .hero-line2 {
   margin-left: 90px;
 }
 
-/* quando JS aggiunge .animate parte l'animazione */
 .hero-line.animate {
   animation: heroFadeIn 0.8s ease-out forwards;
 }
 
-/* la seconda riga entra con un leggero ritardo */
 .hero-line2.animate {
   animation-delay: 0.15s;
 }
 
-/* animazione sfumata */
 @keyframes heroFadeIn {
   from {
     opacity: 0;
@@ -212,37 +204,32 @@ body {
   }
 }
 
-/* SEZIONE MASSOTERAPIA */
+/* =========================================================
+   SEZIONE MASSOTERAPIA (INDEX)
+   ========================================================= */
 
 .section-massoterapia {
   margin-top: 0;
 }
-
-/* parte bianca superiore */
 
 .massoterapia-top {
   background-color: #EDE9E4;
   padding: 70px 0 0;
 }
 
-/* MASSOTERAPIA sul bordo azzurro */
 .massoterapia-title {
   font-family: "Dancing Script", cursive;
-  font-size: clamp(4rem, 6vw, 5rem); /* molto grande */
-  margin: 0 0 0 80px; /* spostata a sinistra come nello screen */
+  font-size: clamp(4rem, 6vw, 5rem);
+  margin: 0 0 0 80px;
   position: relative;
   z-index: 2;
 }
 
-/* fascia azzurra */
-
 .massoterapia-middle {
   background-color: var(--bg-aqua);
-  margin-top: -22px;      /* l’azzurro sale sotto alle lettere */
+  margin-top: -22px;
   padding: 120px 0 100px;
 }
-
-/* fascia bianca con frase gialla al centro */
 
 .massoterapia-bottom {
   background-color: #EDE9E4;
@@ -252,17 +239,13 @@ body {
   justify-content: center;
 }
 
-/* testo descrizione */
-
 .section-text {
   max-width: 900px;
   margin: 0 auto;
   line-height: 1.8;
-  font-size: 1.1rem;  /* più grande */
+  font-size: 1.1rem;
   margin-left: 74px;
 }
-
-/* frase gialla */
 
 .section-quote {
   text-align: center;
@@ -275,7 +258,9 @@ body {
   line-height: 1.8;
 }
 
-/* SEZIONE CONTATTI */
+/* =========================================================
+   SEZIONE CONTATTI (COMUNE)
+   ========================================================= */
 
 .section-contatti {
   margin-top: 0;
@@ -291,16 +276,12 @@ body {
   padding: 60px 0 110px;
 }
 
-/* Titolo contatti centrato e grande */
-
 .contatti-title {
   font-family: "Dancing Script", cursive;
   font-size: clamp(3.4rem, 5vw, 4rem);
   text-align: center;
   margin: 0;
 }
-
-/* griglia contatti */
 
 .contacts-grid {
   margin-top: 110px;
@@ -315,21 +296,18 @@ body {
   text-align: center;
 }
 
-/* wrapper per allineare tutte le icone alla stessa altezza */
 .icon-wrapper {
-  height: 80px;                 /* altezza comune per tutte le icone */
+  height: 80px;
   display: flex;
-  align-items: center;          /* centra l’icona verticalmente */
-  justify-content: center;      /* centra l’icona orizzontalmente */
+  align-items: center;
+  justify-content: center;
   margin-bottom: 16px;
 }
 
-/* base icone */
 .contact-icon {
   object-fit: contain;
 }
 
-/* classi dedicate per ogni icona (puoi modificarle come vuoi) */
 .icon-position {
   width: 40px;
   height: 40px;
@@ -357,7 +335,7 @@ body {
 }
 
 .contact-link {
-  color: #000000;        /* link nero */
+  color: #000000;
   text-decoration: none;
   font-weight: 500;
 }
@@ -366,7 +344,9 @@ body {
   text-decoration: underline;
 }
 
-/* ANIMAZIONI ALLO SCROLL */
+/* =========================================================
+   ANIMAZIONI ALLO SCROLL
+   ========================================================= */
 
 .scroll-section {
   opacity: 0;
@@ -397,7 +377,9 @@ body {
   transition-delay: 0.3s;
 }
 
-/* RESPONSIVE */
+/* =========================================================
+   RESPONSIVE GENERALE
+   ========================================================= */
 
 @media (max-width: 960px) {
   .logo {
@@ -410,15 +392,16 @@ body {
 }
 
 .hero-mobile-bg {
-  display: none;      /* di default nascosta (desktop) */
+  display: none;
 }
 
 @media (max-width: 768px) {
 
+  /* HERO GENERICO (index) */
   .hero {
     background-image: url("../images/bg-mob.png");
-    background-size: cover;          /* torniamo a cover */
-    background-position: center top; /* vede bene la parte alta */
+    background-size: cover;
+    background-position: center top;
     background-attachment: scroll;
     min-height: 100vh;
     display: flex;
@@ -461,7 +444,7 @@ body {
     pointer-events: auto;
   }
 
-  /* TESTO HERO MOBILE */
+  /* TESTO HERO MOBILE (solo index) */
   .hero-content {
     position: relative;
     padding: 40px 16px 80px;
@@ -584,3 +567,32 @@ body {
   }
 }
 
+
+/* iPad / tablet in verticale */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+  /* hero grande usa lo sfondo mobile */
+  .hero {
+    background-image: url("../images/bg-mob.png");
+    background-size: cover;
+    background-position: center top;
+    background-attachment: scroll;
+  }
+
+  .hero-content {
+    justify-content: center;
+    padding: 60px 24px 80px;
+  }
+
+  .hero-title {
+    margin-left: 40px;
+  }
+
+  .hero-line {
+    font-size: 4.2rem;
+  }
+
+  .hero-line2 {
+    margin-left: 60px;
+  }
+}

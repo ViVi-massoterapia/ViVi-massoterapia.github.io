@@ -1,0 +1,273 @@
+/* =========================================================
+   PAGINA CHI SONO – HEADER PICCOLO
+   ========================================================= */
+
+/* HEADER PICCOLO: SOLO SFUMATURA AZZURRA */
+.hero.hero--small {
+  min-height: 160px;
+  background-image: none;
+  background-attachment: scroll;
+  background: linear-gradient(
+    to bottom,
+    #87cfe0 0%,
+    #cceff7 35%,
+    #ede9e4 100%
+  );
+  display: block;
+}
+
+/* niente overlay sopra la sfumatura */
+.hero.hero--small .hero-overlay {
+  display: none;
+}
+
+/* =========================================================
+   SEZIONI CHI SONO (3 blocchi: Chi sono / Esperienze / Obbiettivo)
+   ========================================================= */
+
+/* blocchi di contenuto */
+.about-section {
+  background-color: #EDE9E4;
+  padding: 55px 0;
+}
+
+/* riga a due colonne (foto + testo) */
+.about-row,
+.about-row--reverse {
+  display: flex;
+  align-items: flex-start;          /* foto e testo partono dalla stessa linea */
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* ordine standard: foto prima, testo dopo */
+.about-row .about-image-wrapper {
+  order: 1;
+}
+.about-row .about-text {
+  order: 2;
+}
+
+/* se la riga ha la classe --reverse invertiamo l'ordine (zig-zag) */
+.about-row--reverse .about-image-wrapper {
+  order: 2;
+}
+.about-row--reverse .about-text {
+  order: 1;
+}
+
+/* colonna immagine */
+.about-image-wrapper {
+  flex: 0 0 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;                 /* offset uguale per tutte le sezioni */
+}
+
+.about-image {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* riquadri colorati sotto la foto (effetto rilievo) */
+.photo-frame {
+  position: relative;
+  display: inline-block;
+}
+
+.photo-frame--yellow-left::before,
+.photo-frame--aqua-right::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Chi sono / Obbiettivo: sfondo giallo spostato verso sinistra */
+.photo-frame--yellow-left::before {
+  left: -18px;
+  bottom: -18px;
+  background-color: var(--accent-yellow);
+}
+
+/* Esperienze: sfondo azzurro spostato a destra */
+.photo-frame--aqua-right::before {
+  right: -18px;
+  bottom: -18px;
+  background-color: var(--bg-aqua);
+}
+
+/* colonna testo */
+.about-text {
+  flex: 1;
+  max-width: 650px;
+}
+
+.about-text p {
+  margin: 0 0 14px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* titolo script con banda colorata dietro (base) */
+.about-title-row {
+  position: relative;
+  margin-bottom: 32px;
+  padding-top: 20px;                /* stessa altezza di partenza rispetto alla foto */
+}
+
+.about-title-row::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  height: 12px;
+  background-color: var(--bg-aqua);
+  z-index: -1;
+}
+
+.about-title-row--yellow::after {
+  background-color: var(--accent-yellow);
+}
+
+.about-title-row--center {
+  text-align: center;
+}
+
+.about-title-row--center .about-title {
+  text-align: center;
+}
+
+.about-title {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(3.4rem, 5vw, 4.5rem);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------
+   BANDE FULL-WIDTH per le 3 sezioni
+   --------------------------------------------------------- */
+
+/* 1) CHI SONO → banda azzurra che va verso destra */
+.about-section:nth-of-type(1) .about-title-row {
+  overflow: visible;
+}
+
+.about-section:nth-of-type(1) .about-title-row::after {
+  left: 0;
+  right: -2000px; /* si estende a destra oltre il container */
+  background-color: var(--bg-aqua);
+}
+
+/* 2) ESPERIENZE → banda gialla che viene da sinistra */
+.about-section:nth-of-type(2) .about-title-row {
+  overflow: visible;
+}
+
+.about-section:nth-of-type(2) .about-title-row::after {
+  left: -2000px; /* parte da fuori a sinistra */
+  right: 0;
+  background-color: var(--accent-yellow);
+}
+
+/* 3) OBBIETTIVO → banda azzurra verso destra */
+.about-section:nth-of-type(3) .about-title-row {
+  overflow: visible;
+}
+
+.about-section:nth-of-type(3) .about-title-row::after {
+  left: 0;
+  right: -2000px;
+  background-color: var(--bg-aqua);
+}
+
+/* ---------------------------------------------------------
+   CALIBRAZIONE ALLINEAMENTO FOTO ↔ TITOLI
+   --------------------------------------------------------- */
+
+/* Sezione 1 — CHI SONO */
+.about-section:nth-of-type(1) .about-image-wrapper {
+  margin-top: 40px;
+}
+
+/* Sezione 2 — ESPERIENZE */
+.about-section:nth-of-type(2) .about-image-wrapper {
+  margin-top: 45px;
+}
+
+/* Sezione 3 — OBBIETTIVO */
+.about-section:nth-of-type(3) .about-image-wrapper {
+  margin-top: 40px;
+}
+
+/* Sposta solo il testo "Chi sono" più a destra */
+.about-section:nth-of-type(1) .about-title-row .about-title {
+  margin-left: 15px;
+}
+
+/* Sposta solo il testo "Esperienze" più a destra */
+.about-section:nth-of-type(2) .about-title-row .about-title {
+  margin-left: 350px;
+}
+
+/* Sposta solo il testo "Obbiettivo" più a destra */
+.about-section:nth-of-type(3) .about-title-row .about-title {
+  margin-left: 15px;
+}
+
+/* =========================================================
+   RESPONSIVE CHI-SONO
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 0;
+  }
+
+  .about-row,
+  .about-row--reverse {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about-image-wrapper {
+    flex: 0 0 auto;
+    margin-top: 0;
+  }
+
+  .about-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* su mobile le bande tornano un po' più corte */
+  .about-title-row::after {
+    left: 12%;
+    right: 12%;
+  }
+
+  .hero.hero--small {
+    min-height: 140px;
+  }
+}
+
+/* iPad / tablet in verticale – versione chi-sono */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .hero.hero--small {
+    background-image: none;
+    background: linear-gradient(
+      to bottom,
+      #87cfe0 0%,
+      #cceff7 35%,
+      #ede9e4 100%
+    );
+    display: block;
+  }
+}
