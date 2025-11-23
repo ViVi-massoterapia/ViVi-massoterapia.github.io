@@ -373,3 +373,75 @@
     overflow: visible !important;
   }
 }
+
+/* =========================================
+   CONTATTI – MOBILE & SMALL TABLET
+   (HOME + CHI SONO)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* meno spazio verticale */
+  .contatti-body {
+    padding: 40px 0 70px;
+  }
+
+  /* griglia compatta 2 x 2 */
+  .contacts-grid {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 12px;
+    justify-items: center;
+    align-items: flex-start;
+  }
+
+  .contact-item {
+    text-align: center;
+  }
+
+  /* icone più piccole e ravvicinate */
+  .icon-wrapper {
+    height: 52px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-icon {
+    object-fit: contain;
+  }
+
+  .icon-position {
+    width: 28px;
+    height: 28px;
+  }
+
+  .icon-instagram {
+    width: 70px;
+    height: 70px;
+  }
+
+  .icon-phone {
+    width: 36px;
+    height: 36px;
+  }
+
+  .icon-mail {
+    width: 34px;
+    height: 34px;
+  }
+
+  .contact-label {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+/* telefoni molto piccoli → restiamo comunque 2 x 2 */
+@media (max-width: 480px) {
+  .contacts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
