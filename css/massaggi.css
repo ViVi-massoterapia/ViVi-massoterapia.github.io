@@ -306,11 +306,22 @@ body {
     margin-bottom: 40px;
   }
 
-  .massaggi-section .massage-row:nth-of-type(2) .massage-image-wrapper {
-    margin-top: 0;
+  /* Testo (titolo + paragrafi) SOPRA, immagine SOTTO per tutti */
+  .massage-text {
+    order: 1 !important;
+    max-width: 90%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .massage-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: center;
   }
 
   .massage-image-wrapper {
+    order: 2 !important;
     flex: 0 0 auto;
     max-width: 260px;
     margin: 0 auto 16px;
@@ -323,20 +334,7 @@ body {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
   }
 
-  /* testo centrato sotto il titolo */
-  .massage-text {
-    max-width: 90%;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .massage-text p {
-    font-size: 1rem;
-    line-height: 1.7;
-    text-align: center;
-  }
-
-  /* titoli tutti centrati, banda centrata */
+  /* Titolo centrato, banda a tutta larghezza */
   .massage-title {
     font-size: 2.6rem;
   }
@@ -349,10 +347,9 @@ body {
   }
 
   .massage-title-row::after {
-    left: 10% !important;
-    right: 10% !important;
-    width: auto !important;
-    transform: none !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 100vw !important;  /* banda tutto schermo */
     height: 6px;
   }
 }
@@ -383,3 +380,4 @@ body {
     font-size: 3.2rem;
   }
 }
+
