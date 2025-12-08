@@ -585,7 +585,7 @@ body {
   }
 
   .prenota-img {
-    width: 400px;                  /* più piccola su mobile */
+    width: 300px;                  /* più piccola su mobile */
     height: auto;
   }
 
@@ -727,5 +727,6 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 
 
