@@ -352,6 +352,15 @@ body {
     width: 100vw !important;  /* banda tutto schermo */
     height: 6px;
   }
+@media (max-width: 768px) {
+  /* Centra SEMPRE tutti i paragrafi dei massaggi */
+  .massage-text p,
+  .massage-row:nth-of-type(2) .massage-text p,
+  .massage-row:nth-of-type(4) .massage-text p,
+  .massage-row:nth-of-type(6) .massage-text p {
+    text-align: center !important;
+  }
+}
 }
 
 /* iPad verticale */
@@ -380,4 +389,5 @@ body {
     font-size: 3.2rem;
   }
 }
+
 
