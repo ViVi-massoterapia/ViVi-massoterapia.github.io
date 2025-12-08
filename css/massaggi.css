@@ -42,7 +42,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 80px;          /* <<< stesso gap per TUTTI i massaggi (come Decontratturante) */
+  gap: 80px;
   margin-bottom: 55px;
 }
 
@@ -84,7 +84,6 @@ body {
   margin-top: 60px;
 }
 
-/* “punte” più vicine tra 1° e 2° immagine (solo dentro la sezione) */
 .massaggi-section .massage-row:nth-of-type(2) .massage-image-wrapper {
   margin-top: 60px;
 }
@@ -131,7 +130,7 @@ body {
   padding-top: 40px;
 }
 
-/* banda di base (azzurra) */
+/* banda di base */
 
 .massage-title-row::after {
   content: "";
@@ -152,10 +151,7 @@ body {
   margin: 0;
 }
 
-/* bande full-width alternate:
-   1,3,5 → partono da sinistra
-   2,4,6 → partono da destra
-   (usa tutti i .massage-row) */
+/* bande alternate desktop */
 
 .massage-row:nth-of-type(odd) .massage-title-row {
   overflow: visible;
@@ -180,10 +176,8 @@ body {
 }
 
 /* =========================================================
-   PERSONALIZZAZIONI PER LE PRIME 3 SEZIONI (INVARIATE)
+   PERSONALIZZAZIONI PER LE PRIME 3 SEZIONI
    ========================================================= */
-
-/* 1) Decontratturante: default → banda blu, testo normale */
 
 /* 2) Connettivale → banda gialla, titolo e testo a destra */
 
@@ -204,7 +198,7 @@ body {
   text-align: right;
 }
 
-/* 3) Miofasciale → banda blu + testo un filo più compatto su desktop */
+/* 3) Miofasciale → testo un filo più compatto su desktop */
 
 @media (min-width: 1025px) {
   .massaggi-section .massage-row:nth-of-type(3) .massage-text p {
@@ -217,7 +211,7 @@ body {
    PERSONALIZZAZIONI PER 4–5–6
    ========================================================= */
 
-/* 4) Svedese → banda GIALLO, titolo e testo a destra, foto a destra */
+/* 4) Svedese → banda gialla, titolo/testo a destra, foto a destra */
 
 .massage-row:nth-of-type(4) .massage-title-row {
   text-align: right;
@@ -232,7 +226,6 @@ body {
   transform: translateX(calc(-50% + 50vw));
 }
 
-/* forza l'ordine tipo reverse senza toccare l'HTML */
 .massage-row:nth-of-type(4) .massage-image-wrapper {
   order: 2;
 }
@@ -245,7 +238,7 @@ body {
   text-align: right;
 }
 
-/* 5) Linfodrenante → banda BLU + foto a sinistra (già ok) */
+/* 5) Linfodrenante → banda blu + foto a sinistra */
 
 .massage-row:nth-of-type(5) .massage-title-row {
   text-align: left;
@@ -256,7 +249,6 @@ body {
   background-color: var(--bg-aqua) !important;
 }
 
-/* annullo l'effetto reverse: foto SX, testo DX */
 .massage-row:nth-of-type(5) .massage-image-wrapper {
   order: 1;
 }
@@ -269,11 +261,10 @@ body {
   text-align: left;
 }
 
-/* 6) Anticellulite – foto a destra, testo a sinistra ma allineato a destra,
-   titolo a destra, banda gialla da destra */
+/* 6) Anticellulite */
 
 .massage-row:nth-of-type(6) .massage-title-row {
-  text-align: right;   /* titolo a destra */
+  text-align: right;
   padding-right: 5px;
 }
 
@@ -282,10 +273,9 @@ body {
   right: 0;
   left: auto;
   width: 100vw;
-  transform: translateX(calc(-50% + 50vw)); /* banda come Connettivale */
+  transform: translateX(calc(-50% + 50vw));
 }
 
-/* ordine reverse: testo prima (sx), foto dopo (dx) */
 .massage-row:nth-of-type(6) .massage-text {
   order: 1;
 }
@@ -294,7 +284,6 @@ body {
   order: 2;
 }
 
-/* Testo allineato a destra */
 .massage-row:nth-of-type(6) .massage-text p {
   text-align: right;
 }
@@ -334,6 +323,7 @@ body {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
   }
 
+  /* testo centrato sotto il titolo */
   .massage-text {
     max-width: 90%;
     text-align: center;
@@ -343,17 +333,10 @@ body {
   .massage-text p {
     font-size: 1rem;
     line-height: 1.7;
-    text-align: left;
-  }
-
-  /* sui massaggi “a destra” centro il testo su mobile
-     (2 e 4; anticellulite resta leggibile a sinistra) */
-
-  .massage-row:nth-of-type(2) .massage-text p,
-  .massage-row:nth-of-type(4) .massage-text p {
     text-align: center;
   }
 
+  /* titoli tutti centrati, banda centrata */
   .massage-title {
     font-size: 2.6rem;
   }
@@ -362,6 +345,7 @@ body {
     margin-bottom: 24px;
     padding-top: 10px;
     overflow: visible;
+    text-align: center !important;
   }
 
   .massage-title-row::after {
@@ -379,7 +363,7 @@ body {
 
   .massage-row,
   .massage-row--reverse {
-    gap: 40px;   /* layout più compatto su iPad, va bene diverso dal desktop */
+    gap: 40px;
   }
 
   .massage-image-wrapper {
