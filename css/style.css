@@ -25,7 +25,7 @@ body {
   font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   color: var(--text-main);
-  background-color: #EDE9E4;
+  background-color: #eae0c3;
 }
 
 /* CONTAINER GENERICO */
@@ -217,7 +217,7 @@ body {
 }
 
 .massoterapia-top {
-  background-color: #EDE9E4;
+  background-color: #eae0c3;
   padding: 70px 0 0;
 }
 
@@ -236,10 +236,12 @@ body {
 }
 
 .massoterapia-bottom {
-  background-color: #EDE9E4;
-  padding: 150px 0 110px;
+  background-color: #eae0c3;
+  padding: 150px 0 190px;
+}
+
+.massoterapia-bottom .container {
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
@@ -251,15 +253,81 @@ body {
   margin-left: 74px;
 }
 
+/* frase "Prenditi cura del tuo corpo" */
+/* frase "Prenditi cura del tuo corpo" */
 .section-quote {
   text-align: center;
   font-family: "Dancing Script", cursive;
   font-style: italic;
-  color: var(--accent-yellow);
-  font-size: clamp(1.9rem, 3vw, 2.3rem);
+  color: black;
+  font-size: clamp(2.6rem, 4vw, 3.2rem);
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto 24px;
   line-height: 1.8;
+}
+
+/* blocco testo + immagini + bottone */
+.prenota-content {
+  position: relative;
+  text-align: center;
+}
+
+/* immagine sinistra */
+.prenota-img-box {
+  position: absolute;
+  left: -500px;          /* regola posizione orizzontale */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prenota-img {
+  width: 500px;          /* regola dimensioni */
+  height: auto;
+}
+
+/* immagine in basso a destra */
+.prenota-img-bottom-right {
+  position: absolute;
+  bottom: -120px;         /* quanto scende sotto il bottone */
+  right: -250px;          /* distanza dal bordo destro */
+}
+
+.prenota-img2 {
+  width: 170px;          /* dimensione immagine decorativa */
+  height: auto;
+}
+
+/* bottone prenota */
+.prenota-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 14px 36px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #000;
+  background-color: #c4e4f8;
+  border: 3px solid var(--bg-aqua);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  text-align: center;
+
+  outline: none;
+  box-shadow: none;
+}
+
+.prenota-btn:hover {
+  background-color: var(--bg-aqua);
+  border-color: var(--accent-yellow);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Elimina outline anche quando il bottone viene cliccato */
+.prenota-btn:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 /* =========================================================
@@ -271,8 +339,8 @@ body {
 }
 
 .section-top-white {
-  background-color: #EDE9E4;
-  height: 80px;
+  background-color: #ecddb0;
+  height: 0px;
 }
 
 .contatti-body {
@@ -496,8 +564,29 @@ body {
   }
 
   .section-quote {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     padding: 0 16px;
+    margin-bottom: 12px;
+  }
+
+  /* TESTO + BOTTONE sopra, FOTO sotto */
+  .prenota-content {
+    padding-top: 0;               /* niente spazio extra */
+    display: flex;
+    flex-direction: column;       /* colonna: testo, bottone, poi immagine */
+    align-items: center;
+    text-align: center;
+  }
+
+  .prenota-img-box {
+    position: static;             /* non più assoluta */
+    transform: none;
+    margin: 16px auto 0;          /* foto centrata sotto */
+  }
+
+  .prenota-img {
+    width: 90px;                  /* più piccola su mobile */
+    height: auto;
   }
 
   /* CONTATTI MOBILE */
@@ -533,7 +622,7 @@ body {
   }
 
   .section-quote {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .icon-wrapper {
@@ -578,12 +667,10 @@ body {
 
 @media (max-width: 768px) {
 
-  /* meno spazio verticale */
   .contatti-body {
     padding: 40px 0 70px;
   }
 
-  /* griglia compatta 2 x 2 */
   .contacts-grid {
     margin-top: 32px;
     display: grid;
@@ -597,7 +684,6 @@ body {
     text-align: center;
   }
 
-  /* icone più piccole e ravvicinate */
   .icon-wrapper {
     height: 52px;
     margin-bottom: 6px;
@@ -636,7 +722,6 @@ body {
   }
 }
 
-/* telefoni molto piccoli → restiamo comunque 2 x 2 */
 @media (max-width: 480px) {
   .contacts-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

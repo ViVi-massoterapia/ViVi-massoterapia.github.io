@@ -3,6 +3,10 @@
    ========================================================= */
 
 /* HEADER PICCOLO: SOLO SFUMATURA AZZURRA */
+body {
+  background-color: #eae0c3 !important;
+}
+
 .hero.hero--small {
   min-height: 160px;
   background-image: none;
@@ -11,7 +15,7 @@
     to bottom,
     #87cfe0 0%,
     #cceff7 35%,
-    #ede9e4 100%
+    #eae0c3 100%
   );
   display: block;
 }
@@ -27,7 +31,7 @@
 
 /* blocchi di contenuto */
 .about-section {
-  background-color: #EDE9E4;
+  background-color: #eae0c3;
   padding: 55px 0;
 }
 
@@ -319,7 +323,7 @@
       to bottom,
       #87cfe0 0%,
       #cceff7 35%,
-      #ede9e4 100%
+      #eae0c3 100%
     );
     display: block;
   }

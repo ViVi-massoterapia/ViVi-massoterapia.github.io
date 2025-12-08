@@ -2,16 +2,327 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Chi sono – Massoterapia</title>
+  <title>Massaggi - ViVi Massoterapia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Babylonica&family=Dancing+Script:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Splash&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/massaggi.css" />
 </head>
-<body>
-  <main class="container" style="padding: 40px 24px;">
-    <h1 class="script">Chi sono</h1>
-    <p>Contenuto in arrivo…</p>
-    <p><a href="index.html">← Torna alla home</a></p>
+<body id="top">
+
+  <!-- HEADER CON SFUMATURA AZZURRA + NAV (UGUALE A CHI-SONO) -->
+  <header class="hero hero--small">
+    <div class="hero-overlay"></div>
+
+    <div class="nav-bar">
+      <div class="nav-left">
+        <img src="images/logo.png" alt="Logo massoterapia" class="logo" />
+      </div>
+
+      <nav class="main-nav">
+        <button class="nav-toggle" aria-label="Apri menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html#top">HOME</a></li>
+          <li><a href="chi-sono.html">CHI SONO</a></li>
+          <li><a href="massaggi.html">MASSAGGI</a></li>
+          <li><a href="https://booking.vivi-massoterapia.com/" target="_blank">PRENOTA</a></li>
+          <li><a href="galleria.html">GALLERIA</a></li>
+          <li><a href="#contatti">CONTATTI</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- SEZIONE MASSAGGI -->
+    <!-- NOTA: qui HO TOLTO "scroll-section" -->
+    <section class="massaggi-section">
+      <div class="container">
+
+        <!-- 1) DECONTRATTURANTE / SPORTIVO -->
+        <article class="massage-row scroll-section">
+          <div class="massage-image-wrapper fade-in-up">
+            <div class="massage-photo-frame">
+              <img
+                src="images/massaggi/decontratturante.jpg"
+                alt="Massaggio decontratturante / sportivo"
+                class="massage-image"
+              />
+            </div>
+          </div>
+
+          <div class="massage-text fade-in-up delay-1">
+            <div class="massage-title-row massage-title-row--aqua">
+              <h2 class="script massage-title">Decontratturante / sportivo</h2>
+            </div>
+            <p>
+              Aiuta a sciogliere le tensioni e contratture muscolare legate ad un affaticamento muscolare
+              dipeso da molteplici cause quali ad esempio scorretta postura, problematiche funzionali e
+              biomeccaniche, allenamento, stress, tensioni emotive, problematiche viscerali.
+            </p>
+            <p>
+              La manualità è intensa profonda, come frizioni, impastamenti e pressioni ischemiche per
+              lavorare al meglio il tessuto muscolare.
+            </p>
+            <p>
+              L’obbiettivo è riportare il muscolo in ipertono ad una condizione normale, aumentare
+              l’ossigenazione e l’elasticità dei tessuti, migliorare la circolazione sanguigna e alleviare
+              cosi quella condizione costante di affaticamento e dolore.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2) CONNETTIVALE (testo a sinistra, foto a destra) -->
+        <article class="massage-row massage-row--reverse scroll-section">
+
+          <!-- TESTO PRIMA -->
+          <div class="massage-text fade-in-up">
+            <div class="massage-title-row massage-title-row--aqua">
+              <h2 class="script massage-title">Connettivale</h2>
+            </div>
+            <p>
+              Il massaggio connettivale è un tipo di massaggio che prevede la messa in pratica di particolari
+              tecniche di manipolazione che mirano a raggiungere e stimolare i tessuti più profondi,
+              ovvero il tessuto connettivo.
+            </p>
+            <p>
+              Lo scopo del massaggio connettivale è quello di stimolare una determinata area del corpo
+              al fine di ottenere un effetto benefico sia locale, sia riflesso su funzioni viscerali
+              o organi posti in profondità, anche in sedi distanti da quella in cui il massaggio
+              viene praticato.
+            </p>
+          </div>
+
+          <!-- IMMAGINE DOPO -->
+          <div class="massage-image-wrapper fade-in-up delay-1">
+            <div class="massage-photo-frame">
+              <img
+                src="images/massaggi/connettivale.jpg"
+                alt="Massaggio connettivale"
+                class="massage-image"
+              />
+            </div>
+          </div>
+        </article>
+
+        <!-- 3) MIOFASCIALE -->
+        <article class="massage-row scroll-section">
+          <div class="massage-image-wrapper fade-in-up">
+            <div class="massage-photo-frame">
+              <img
+                src="images/massaggi/miofasciale.jpg"
+                alt="Massaggio miofasciale"
+                class="massage-image"
+              />
+            </div>
+          </div>
+
+          <div class="massage-text fade-in-up delay-1">
+            <div class="massage-title-row massage-title-row--aqua">
+              <h2 class="script massage-title">Miofasciale</h2>
+            </div>
+            <p>
+              È una tecnica manuale che si concentra sul rilascio delle tensioni accumulate nel sistema fasciale,
+              il tessuto connettivo che avvolge le strutture muscolari e viscerali. L’obbiettivo è quello di
+              ristabilire il piano di scorrimento dei vari ventri muscolari.
+            </p>
+            <p>
+              Attraverso l’applicazione di una pressione costante e l’uso di movimenti lenti e profondi,
+              si lavora per sciogliere le aderenze e le restrizioni della fascia, migliorando la mobilità
+              e riducendo il dolore cronico e l’infiammazione, migliorando cosi la postura e le
+              funzionalità bio-meccaniche.
+            </p>
+            <p>
+              Questo tipo di trattamento è particolarmente efficace per trattare infiammazioni croniche e acute
+              di tutto il sistema fasciale che generalmente si manifestano con mal di schiena, dolori cervicali
+              e altre condizioni che coinvolgono il sistema muscolo-scheletrico.
+            </p>
+          </div>
+        </article>
+
+        <!-- 4) SVEDSESE (foto SX, testo DX, banda blu) -->
+        <article class="massage-row scroll-section">
+          <div class="massage-image-wrapper fade-in-up">
+            <div class="massage-photo-frame">
+              <img
+                src="images/massaggi/svedese.jpg"
+                alt="Massaggio svedese"
+                class="massage-image"
+              />
+            </div>
+          </div>
+
+          <div class="massage-text fade-in-up delay-1">
+            <div class="massage-title-row massage-title-row--aqua">
+              <h2 class="script massage-title">Svedese</h2>
+            </div>
+            <p>
+              Il massaggio svedese è la terapia di massaggio più conosciuta e praticata al mondo
+              e si concentra sul rilassamento dei muscoli e sul miglioramento della circolazione sanguigna.
+            </p>
+            <p>
+              È un massaggio terapeutico per tutto il corpo che lavora diverse zone e muscoli
+              per rigenerare il corpo e sostenere la salute generale.
+            </p>
+            <p>
+              Ha un effetto calmante ed equilibrante sul sistema nervoso, aiuta nella gestione dello stress,
+              nel migliorare la qualità del sonno e nel migliorare il tono dell’umore.
+            </p>
+          </div>
+        </article>
+
+        <!-- 5) LINFODRENANTE (reverse, banda gialla) -->
+        <article class="massage-row massage-row--reverse scroll-section">
+          <div class="massage-text fade-in-up">
+            <div class="massage-title-row massage-title-row--aqua">
+              <h2 class="script massage-title">Linfodrenante</h2>
+            </div>
+            <p>
+              Il Linfodrenaggio Vodder è una tecnica di massaggio manuale che stimola il drenaggio
+              dei liquidi linfatici in caso di rallentamento o stasi (gambe, braccia, addome).
+            </p>
+            <p>
+              Si basa su manovre lente, leggere e precise che favoriscono la circolazione della linfa:
+              prima liberano le stazioni linfatiche, poi guidano i liquidi lungo i vasi.
+            </p>
+            <p>
+              Aiuta a migliorare condizioni come: lipedema, gonfiore, ritenzione idrica,
+              ritardi di cicatrizzazione, secchezza della pelle, e supporta i trattamenti
+              pre e post chirurgia vascolare o plastica.
+            </p>
+          </div>
+
+          <div class="massage-image-wrapper fade-in-up delay-1">
+            <div class="massage-photo-frame">
+              <img
+                src="images/massaggi/linfodrenante.jpg"
+                alt="Massaggio linfodrenante"
+                class="massage-image"
+              />
+            </div>
+          </div>
+        </article>
+
+        <!-- 6) ANTICELLULITE (come il 5: reverse, banda gialla) -->
+        <article class="massage-row massage-row--reverse scroll-section">
+          <div class="massage-text fade-in-up">
+            <div class="massage-title-row massage-title-row--aqua">
+              <h2 class="script massage-title">Anticellulite</h2>
+            </div>
+            <p>
+              Il massaggio anticellulite mira a ridurre la cellulite e la ritenzione idrica,
+              agendo sul sistema linfatico e stimolando la circolazione sanguigna.
+            </p>
+            <p>
+              Questa tecnica di massaggio aiuta a drenare i liquidi accumulati,
+              soprattutto nelle aree critiche come gambe e glutei,
+              migliorando così l’aspetto della cute.
+            </p>
+            <p>
+              I principali benefici includono la riduzione degli inestetismi cutanei,
+              il miglioramento della circolazione, l’attivazione del sistema linfatico,
+              una pelle più tonica e rassodata, il sollievo dalla tensione muscolare
+              e un generale miglioramento del benessere emotivo.
+            </p>
+          </div>
+
+          <div class="massage-image-wrapper fade-in-up delay-1">
+            <div class="massage-photo-frame">
+              <img
+                src="images/massaggi/anticellulite.jpg"
+                alt="Massaggio anticellulite"
+                class="massage-image"
+              />
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SEZIONE CONTATTI (come le altre pagine) -->
+    <section id="contatti" class="section-contatti scroll-section">
+      <div class="section-top-white"></div>
+
+      <div class="contatti-body">
+        <div class="container">
+          <h2 class="script contatti-title fade-in-up">
+            Contatti
+          </h2>
+
+          <div class="contacts-grid">
+            <div class="contact-item fade-in-up delay-1">
+              <div class="icon-wrapper">
+                <img src="images/position.png"
+                     alt="Posizione"
+                     class="contact-icon icon-position" />
+              </div>
+              <p class="contact-label">
+                <a class="contact-link" target="_blank"
+                   href="https://maps.app.goo.gl/mLaGNLBpLpDcjjrJ7">
+                  Via Cao del Prà 11<br />Lugagnano (VR)
+                </a>
+              </p>
+            </div>
+
+            <div class="contact-item fade-in-up delay-1">
+              <div class="icon-wrapper">
+                <img src="images/instagram.png"
+                     alt="Instagram"
+                     class="contact-icon icon-instagram" />
+              </div>
+              <p class="contact-label">
+                <a class="contact-link" target="_blank"
+                   href="https://www.instagram.com/vanessa_vezzari?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                  vanessa_vezzari
+                </a>
+              </p>
+            </div>
+
+            <div class="contact-item fade-in-up delay-2">
+              <div class="icon-wrapper">
+                <img src="images/phone.png"
+                     alt="Telefono"
+                     class="contact-icon icon-phone" />
+              </div>
+              <p class="contact-label">
+                <a href="tel:+393312326462" style="color:#000; text-decoration:none;">
+                  +393312326462
+                </a>
+              </p>
+            </div>
+
+            <div class="contact-item fade-in-up delay-2">
+              <div class="icon-wrapper">
+                <img src="images/mail.png"
+                     alt="Email"
+                     class="contact-icon icon-mail" />
+              </div>
+              <p class="contact-label">
+                <a href="mailto:v.vezzari@gmail.com" class="contact-link">
+                  v.vezzari@gmail.com
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
 </body>
 </html>
