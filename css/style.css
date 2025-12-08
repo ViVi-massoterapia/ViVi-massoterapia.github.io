@@ -560,7 +560,7 @@ body {
   }
 
   .massoterapia-bottom {
-    padding: 120px 0 90px;
+    padding: 60px 0 70px;
   }
 
   .section-quote {
@@ -727,6 +727,7 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 
 
 
