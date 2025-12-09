@@ -2,16 +2,195 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Chi sono – Massoterapia</title>
+  <title>Galleria - ViVi Massoterapia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Babylonica&family=Dancing+Script:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Splash&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/galleria.css" />
 </head>
-<body>
-  <main class="container" style="padding: 40px 24px;">
-    <h1 class="script">Chi sono</h1>
-    <p>Contenuto in arrivo…</p>
-    <p><a href="index.html">← Torna alla home</a></p>
+<body id="top">
+
+  <!-- HEADER CON SFUMATURA AZZURRA + NAV (UGUALE A CHI-SONO/MASSAGGI) -->
+  <header class="hero hero--small">
+    <div class="hero-overlay"></div>
+
+    <div class="nav-bar">
+      <div class="nav-left">
+        <img src="images/logo.png" alt="Logo massoterapia" class="logo" />
+      </div>
+
+      <nav class="main-nav">
+        <button class="nav-toggle" aria-label="Apri menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html#top">HOME</a></li>
+          <li><a href="chi-sono.html">CHI SONO</a></li>
+          <li><a href="massaggi.html">MASSAGGI</a></li>
+          <li><a href="https://booking.vivi-massoterapia.com/" target="_blank">PRENOTA</a></li>
+          <li><a href="galleria.html">GALLERIA</a></li>
+          <li><a href="#contatti">CONTATTI</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- SEZIONE GALLERIA -->
+    <section class="gallery-section scroll-section">
+      <div class="container">
+        <div class="gallery-header fade-in-up">
+          <h1 class="script gallery-title">Galleria</h1>
+          <p class="gallery-subtitle">
+            Uno sguardo allo studio, ai dettagli e alle atmosfere che amo creare.
+          </p>
+        </div>
+
+        <div class="gallery-grid fade-in-up delay-1">
+          <!-- 15 immagini: images/galleria/1.jpg ... 15.jpg -->
+          <!-- Ogni img ha data-index per la navigazione nel lightbox -->
+          <figure class="gallery-item">
+            <img src="images/galleria/1.jpg" alt="Galleria 1" loading="lazy" data-index="0">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/2.jpg" alt="Galleria 2" loading="lazy" data-index="1">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/3.jpg" alt="Galleria 3" loading="lazy" data-index="2">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/4.jpg" alt="Galleria 4" loading="lazy" data-index="3">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/5.jpg" alt="Galleria 5" loading="lazy" data-index="4">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/6.jpg" alt="Galleria 6" loading="lazy" data-index="5">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/7.jpg" alt="Galleria 7" loading="lazy" data-index="6">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/8.jpg" alt="Galleria 8" loading="lazy" data-index="7">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/9.jpg" alt="Galleria 9" loading="lazy" data-index="8">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/10.jpg" alt="Galleria 10" loading="lazy" data-index="9">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/11.jpg" alt="Galleria 11" loading="lazy" data-index="10">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/12.jpg" alt="Galleria 12" loading="lazy" data-index="11">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/13.jpg" alt="Galleria 13" loading="lazy" data-index="12">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/14.jpg" alt="Galleria 14" loading="lazy" data-index="13">
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/galleria/15.jpg" alt="Galleria 15" loading="lazy" data-index="14">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX A TUTTO SCHERMO -->
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox__backdrop"></div>
+      <div class="lightbox__content">
+        <button class="lightbox__close" aria-label="Chiudi galleria">&times;</button>
+        <button class="lightbox__arrow lightbox__arrow--prev" aria-label="Immagine precedente">&#10094;</button>
+        <img class="lightbox__image" src="" alt="">
+        <button class="lightbox__arrow lightbox__arrow--next" aria-label="Immagine successiva">&#10095;</button>
+      </div>
+    </div>
+
+    <!-- SEZIONE CONTATTI (UGUALE ALLE ALTRE PAGINE) -->
+    <section id="contatti" class="section-contatti scroll-section">
+      <div class="section-top-white"></div>
+
+      <div class="contatti-body">
+        <div class="container">
+          <h2 class="script contatti-title fade-in-up">
+            Contatti
+          </h2>
+
+          <div class="contacts-grid">
+            <div class="contact-item fade-in-up delay-1">
+              <div class="icon-wrapper">
+                <img src="images/position.png"
+                     alt="Posizione"
+                     class="contact-icon icon-position" />
+              </div>
+              <p class="contact-label">
+                <a class="contact-link" target="_blank"
+                   href="https://maps.app.goo.gl/mLaGNLBpLpDcjjrJ7">
+                  Via Cao del Prà 11<br />Lugagnano (VR)
+                </a>
+              </p>
+            </div>
+
+            <div class="contact-item fade-in-up delay-1">
+              <div class="icon-wrapper">
+                <img src="images/instagram.png"
+                     alt="Instagram"
+                     class="contact-icon icon-instagram" />
+              </div>
+              <p class="contact-label">
+                <a class="contact-link" target="_blank"
+                   href="https://www.instagram.com/vanessa_vezzari?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                  vanessa_vezzari
+                </a>
+              </p>
+            </div>
+
+            <div class="contact-item fade-in-up delay-2">
+              <div class="icon-wrapper">
+                <img src="images/phone.png"
+                     alt="Telefono"
+                     class="contact-icon icon-phone" />
+              </div>
+              <p class="contact-label">
+                <a href="tel:+393312326462" style="color:#000; text-decoration:none;">
+                  +393312326462
+                </a>
+              </p>
+            </div>
+
+            <div class="contact-item fade-in-up delay-2">
+              <div class="icon-wrapper">
+                <img src="images/mail.png"
+                     alt="Email"
+                     class="contact-icon icon-mail" />
+              </div>
+              <p class="contact-label">
+                <a href="mailto:v.vezzari@gmail.com" class="contact-link">
+                  v.vezzari@gmail.com
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
 </body>
 </html>
