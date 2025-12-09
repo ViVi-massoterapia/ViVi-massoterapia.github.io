@@ -3,30 +3,48 @@
    ========================================================= */
 
 body {
-  background-color: #eae0c3 !important;
+  background-color: #eae0c3;
 }
 
-/* stesso hero piccolo di chi-sono/massaggi */
+/* Hero della galleria: sfondo trasparente,
+   niente gradiente giallino/azzurro */
 .hero.hero--small {
-  min-height: 160px;
-  background-image: none;
-  background-attachment: scroll;
-  background: linear-gradient(
-    to bottom,
-    #87cfe0 0%,
-    #cceff7 35%,
-    #eae0c3 100%
-  );
-  display: block;
+  background: none !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  min-height: 0 !important;
+  padding: 0 !important;
 }
 
 .hero.hero--small .hero-overlay {
-  display: none;
+  display: none !important;
+}
+
+/* Nav-bar appoggiata direttamente sulla foto di sfondo */
+.nav-bar {
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 /* =========================================================
-   SEZIONE GALLERIA
+   SEZIONE GALLERIA – FOTO DI SFONDO + SFUMATURA AZZURRA
    ========================================================= */
+
+.gallery-section {
+  position: relative;
+  padding: 70px 0 80px;
+
+  /* Foto di sfondo desktop */
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  min-height: 100vh;
+}
+
+/* Velo azzurro sopra la foto, che rimane anche scorrendo */
 .gallery-section::before {
   content: "";
   position: absolute;
@@ -36,17 +54,15 @@ body {
 
   background: linear-gradient(
       to bottom,
-      rgba(135, 207, 224, 0.95) 0%,
-      rgba(135, 207, 224, 0.70) 12%,
-      rgba(135, 207, 224, 0.20) 22%,
-      rgba(135, 207, 224, 0.00) 32%,
-      rgba(135, 207, 224, 0.00) 100%
+      rgba(135, 207, 224, 0.80) 0%,   /* più intensa in alto */
+      rgba(135, 207, 224, 0.65) 25%,
+      rgba(135, 207, 224, 0.55) 50%,
+      rgba(135, 207, 224, 0.50) 75%,
+      rgba(135, 207, 224, 0.45) 100%  /* resta azzurra anche in basso */
   );
 }
 
-
-
-/* Fa sì che il contenuto stia sopra l'overlay */
+/* Contenuto sopra foto + sfumatura */
 .gallery-section > .container,
 .gallery-header,
 .gallery-grid {
@@ -54,20 +70,9 @@ body {
   z-index: 1;
 }
 
-.gallery-section {
-  position: relative;
-  padding: 70px 0 80px;
-
-  /* 🖼 Sfondo a tutta pagina */
-  background-image: url("../images/bg.jpg");
-  background-size: cover;        /* Copre tutta la pagina */
-  background-position: center;   /* Centra l'immagine */
-  background-repeat: no-repeat;
-  background-attachment: fixed;  /* Effetto elegante su PC */
-}
-
 .gallery-header {
   text-align: center;
+  margin-top: 170px;   /* 🔥 Aggiunto: abbassa il titolo */
   margin-bottom: 40px;
 }
 
@@ -86,7 +91,9 @@ body {
   margin-inline: auto;
 }
 
-/* GRID FOTO */
+/* =========================================================
+   GRID FOTO
+   ========================================================= */
 
 .gallery-grid {
   display: grid;
@@ -94,12 +101,17 @@ body {
   gap: 18px;
 }
 
+/* Cornice + ombra elegante */
 .gallery-item {
   position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  background-color: #d8cda6;
   cursor: pointer;
+
+  padding: 6px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #c99e42;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .gallery-item img {
@@ -107,18 +119,25 @@ body {
   height: 100%;
   display: block;
   object-fit: cover;
+  border-radius: 10px;
   transition:
     transform 0.35s ease,
     filter 0.35s ease,
     opacity 0.35s ease;
 }
 
-/* hover: leggero zoom + contrasto */
+/* Hover con zoom + contrasto + sollevamento */
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
 .gallery-item:hover img {
   transform: scale(1.05);
   filter: contrast(1.05) saturate(1.03);
 }
 
+/* Luce sopra foto */
 .gallery-item::after {
   content: "";
   position: absolute;
@@ -126,16 +145,28 @@ body {
   background: radial-gradient(circle at center, rgba(255,255,255,0.25), transparent 55%);
   opacity: 0;
   transition: opacity 0.35s ease;
-  pointer-events: none; /* 👈 AGGIUNGI QUESTA */
+  pointer-events: none;
 }
-
 
 .gallery-item:hover::after {
   opacity: 1;
 }
 
 /* =========================================================
-   LIGHTBOX FULLSCREEN
+   DISATTIVA ANIMAZIONI DI SCROLL NELLA GALLERIA
+   (altre sezioni del sito restano animate)
+   ========================================================= */
+
+.gallery-section .gallery-header,
+.gallery-section .gallery-grid,
+.gallery-section .gallery-item {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* =========================================================
+   LIGHTBOX
    ========================================================= */
 
 .lightbox {
@@ -161,7 +192,6 @@ body {
   background: rgba(0, 0, 0, 0.75);
 }
 
-/* contenitore centrale */
 .lightbox__content {
   position: relative;
   max-width: 90vw;
@@ -174,13 +204,12 @@ body {
 }
 
 .lightbox__image {
-  max-width: 80vw;   /* prima era 100% */
-  max-height: 80vh;  /* prima era 100% */
+  max-width: 80vw;
+  max-height: 80vh;
   border-radius: 8px;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
 }
 
-/* pulsante chiudi (X) */
 .lightbox__close {
   position: absolute;
   top: 12px;
@@ -195,7 +224,6 @@ body {
   cursor: pointer;
 }
 
-/* frecce */
 .lightbox__arrow {
   position: absolute;
   top: 50%;
@@ -228,24 +256,24 @@ body {
 
 @media (max-width: 1024px) {
   .gallery-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-
   .gallery-section {
     padding: 40px 0 50px;
 
-    /* 👉 sfondo mobile della home */
+    /* sfondo mobile: foto verticale */
     background-image: url("../images/bg-mob.png");
     background-size: cover;
     background-position: center top;
-    background-attachment: scroll;  /* niente fixed su mobile */
+    background-repeat: no-repeat;
+    background-attachment: scroll;
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
@@ -254,10 +282,7 @@ body {
     padding: 0 8px;
   }
 
-  .lightbox__arrow {
-    font-size: 1.8rem;
-  }
-
+  .lightbox__arrow,
   .lightbox__close {
     font-size: 1.8rem;
   }
@@ -268,83 +293,3 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
-
-/* esempio: cornice + ombra elegante */
-.gallery-item {
-  border-radius: 12px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
-}
-
-/* =========================================================
-   MIGLIORIA GALLERIA – CORNICE + OMBRA ELEGANTE
-   ========================================================= */
-
-/* Cornice bianca + ombra più evidente */
-.gallery-item {
-  background: #c99e42;           /* Cornice bianca */
-  padding: 6px;                  /* Spessore della cornice */
-  border-radius: 14px;           /* Arrotondamento elegante */
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);  /* Ombra più profonda */
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-/* Immagine interna leggermente più morbida */
-.gallery-item img {
-  border-radius: 10px;
-}
-
-/* Hover con sollevamento */
-.gallery-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);  /* Ombra ancora più intensa */
-}
-
-/* Rimuove gradient e rende la top bar trasparente SOLO in galleria */
-.hero.hero--small {
-  background: none !important;
-  background-image: none !important;
-  background-color: transparent !important;
-  min-height: 0 !important;
-}
-
-.hero.hero--small .hero-overlay {
-  display: none !important;
-}
-
-.nav-bar {
-  background: transparent !important;
-}
-
-@media (max-width: 768px) {
-  .hero.hero--small {
-    background: none !important;
-    background-image: none !important;
-    background-color: transparent !important;
-    min-height: 0 !important;
-  }
-
-  .hero.hero--small .hero-overlay {
-    display: none !important;
-  }
-
-  /* nav-bar appoggiata direttamente sulla foto di sfondo */
-  .nav-bar {
-    background: transparent !important;
-  }
-}
-
-.gallery-header {
-  margin-top: 160px; /* regola qui l’altezza */
-}
-
-.gallery-section {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh; /* <<< aggiungi questo */
-}
-

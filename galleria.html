@@ -12,13 +12,23 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/logo.png">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/galleria.css" />
-</head>
-<body id="top">
+  <!-- CSS GLOBALI (uguali alle altre pagine) -->
+  <link rel="stylesheet" href="css/style.css?v=1" />
 
-  <!-- HEADER CON SFUMATURA AZZURRA + NAV (UGUALE A CHI-SONO/MASSAGGI) -->
+  <!-- CSS SPECIFICO GALLERIA -->
+  <link rel="stylesheet" href="css/galleria.css?v=1" />
+
+  <!-- TEST: se vedi il testo in rosso, stai aprendo il file giusto -->
+  <style>
+    /* puoi togliere questo blocco dopo il test */
+    body.debug-test-loaded {
+      outline: 3px solid red;
+    }
+  </style>
+</head>
+<body id="top" class="debug-test-loaded">
+
+  <!-- HEADER CON NAV UGUALE ALLE ALTRE PAGINE -->
   <header class="hero hero--small">
     <div class="hero-overlay"></div>
 
@@ -36,7 +46,7 @@
           <li><a href="chi-sono.html">CHI SONO</a></li>
           <li><a href="massaggi.html">MASSAGGI</a></li>
           <li><a href="https://booking.vivi-massoterapia.com/" target="_blank">PRENOTA</a></li>
-          <li><a href="galleria.html">GALLERIA</a></li>
+          <li><a href="galleria.html" class="active">GALLERIA</a></li>
           <li><a href="#contatti">CONTATTI</a></li>
         </ul>
       </nav>
@@ -45,19 +55,18 @@
 
   <main>
 
-    <!-- SEZIONE GALLERIA -->
-    <section class="gallery-section scroll-section">
+    <!-- SEZIONE GALLERIA, SENZA SCROLL ANIMATIONS -->
+    <section class="gallery-section">
       <div class="container">
-        <div class="gallery-header fade-in-up">
+        <div class="gallery-header">
           <h1 class="script gallery-title">Galleria</h1>
           <p class="gallery-subtitle">
             Uno sguardo allo studio, ai dettagli e alle atmosfere che amo creare.
           </p>
         </div>
 
-        <div class="gallery-grid fade-in-up delay-1">
+        <div class="gallery-grid">
           <!-- 15 immagini: images/galleria/1.jpg ... 15.jpg -->
-          <!-- Ogni img ha data-index per la navigazione nel lightbox -->
           <figure class="gallery-item">
             <img src="images/galleria/1.jpg" alt="Galleria 1" loading="lazy" data-index="0">
           </figure>
@@ -107,7 +116,7 @@
       </div>
     </section>
 
-    <!-- LIGHTBOX A TUTTO SCHERMO -->
+    <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox">
       <div class="lightbox__backdrop"></div>
       <div class="lightbox__content">
@@ -118,7 +127,7 @@
       </div>
     </div>
 
-    <!-- SEZIONE CONTATTI (UGUALE ALLE ALTRE PAGINE) -->
+    <!-- SEZIONE CONTATTI (identica alle altre pagine) -->
     <section id="contatti" class="section-contatti scroll-section">
       <div class="section-top-white"></div>
 
