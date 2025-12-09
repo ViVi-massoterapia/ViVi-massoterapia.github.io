@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Pagina non trovata - ViVi Massoterapia</title>
+  <title>404 - Pagina non trovata | ViVi Massoterapia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Google Fonts -->
@@ -14,12 +14,11 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
-  <!-- Puoi creare un css dedicato, es. 404.css, o riusare uno esistente -->
-  <link rel="stylesheet" href="css/chi-sono.css" />
 </head>
-<body id="top">
 
-  <!-- HEADER CON SFUMATURA AZZURRA + NAV -->
+<body>
+
+  <!-- HEADER + MENU -->
   <header class="hero hero--small">
     <div class="hero-overlay"></div>
 
@@ -44,49 +43,65 @@
     </div>
   </header>
 
-  <main>
+  <!-- CONTENUTO CENTRATO -->
+  <main style="
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 20px;
+      ">
+    <div>
 
-    <!-- SEZIONE 404 -->
-    <section class="about-section scroll-section">
-      <div class="container">
-        <div class="about-row about-row--center">
+      <h1 style="
+            font-size: 90px;
+            font-weight: 600;
+            color: #1e1e1e;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+          ">
+        404
+      </h1>
 
-          <div class="about-text fade-in-up">
-            <div class="about-title-row about-title-row--aqua about-title-row--center">
-              <h1 class="script about-title">Ops… pagina non trovata</h1>
-            </div>
+      <h2 class="script" style="
+            font-size: 40px;
+            color: #0099a8;
+            margin-bottom: 20px;
+          ">
+        Pagina non trovata
+      </h2>
 
-            <p>
-              La pagina che stai cercando non è disponibile, forse è stata spostata
-              oppure l’indirizzo è stato digitato in modo errato.
-            </p>
+      <p style="
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            max-width: 450px;
+            margin: 0 auto 30px auto;
+          ">
+        La pagina che stai cercando non è disponibile. Potrebbe essere stata spostata
+        oppure l’indirizzo potrebbe essere errato.
+      </p>
 
-            <p>
-              Puoi tornare alla home oppure continuare la navigazione attraverso il menu in alto.
-            </p>
+      <a href="/#top" style="
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 26px;
+            background-color: #0099a8;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: 0.2s ease;
+          ">
+        Torna alla Home
+      </a>
 
-            <p style="margin-top: 2rem;">
-              <a href="/#top" class="contact-link" style="font-weight: 600;">
-                Torna alla Home
-              </a>
-            </p>
-          </div>
-
-          <div class="about-image-wrapper fade-in-up delay-1">
-            <div class="photo-frame photo-frame--yellow-left">
-              <img src="images/chi-sono.jpg"
-                   alt="Studio ViVi Massoterapia"
-                   class="about-image" />
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
+    </div>
   </main>
 
   <!-- JS -->
   <script src="js/main.js"></script>
+
 </body>
 </html>
